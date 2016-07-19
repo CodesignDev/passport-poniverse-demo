@@ -29,12 +29,12 @@ module.exports = function(app, passport) {
   }));
 
   // local signup
-  app.get('/signup', function(req, res) {
-    res.render('signup.ejs', { message: req.flash('signupMessage') });
+  app.get('/register', function(req, res) {
+    res.render('register.ejs', { message: req.flash('signupMessage') });
   });
-  app.post('/signup', passport.authenticate('local-signup', {
+  app.post('/register', passport.authenticate('local-register', {
     successRedirect: '/profile',
-    failureRedirect: '/signup',
+    failureRedirect: '/register',
     failureFlash: true
   }));
 
