@@ -31,7 +31,7 @@ module.exports = function (passport) {
 
     passReqToCallback: true
   },
-  function (req, token, refreshToken, profile, done) {
+  function (req, token, refreshToken, tokenParams, profile, done) {
     // asynchronous
     process.nextTick(function () {
 
@@ -44,6 +44,8 @@ module.exports = function (passport) {
             if (externalUser && externalUser.get('access_token')) {
               externalUser.set('access_token', token);
               externalUser.set('refresh_token', refreshToken !== undefined ? refreshToken : null);
+              externalUser.set('expires', moment().add(tokenParams['expires_in'], 'seconds'));
+              externalUser.set('type', tokenParams['token_type']);
               externalUser.save();
 
               User.forge({id: externalUser.id})
@@ -67,6 +69,8 @@ module.exports = function (passport) {
                           external_user_id: profile.id,
                           access_token: token,
                           refresh_token: refreshToken,
+                          expires: moment().add(tokenParams['expires_in'], 'seconds'),
+                          type: tokenParams['token_type'],
                           service: 'poniverse'
                         })
                           .save()
