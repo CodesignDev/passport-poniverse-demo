@@ -1,0 +1,13 @@
+logs
+*.log
+npm-debug.log*
+
+pids
+*.pid
+*.seed
+
+node_modules
+.node_repl_history
+
+knexfile.js
+.env

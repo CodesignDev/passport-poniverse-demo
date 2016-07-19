@@ -1,0 +1,51 @@
+{
+  "name": "passport-poniverse-demo",
+  "version": "1.0.0",
+  "description": "Example app demoing the passport-poniverse auth strategy",
+  "private": true,
+  "main": "index.js",
+  "keywords": [
+    "passport",
+    "poni",
+    "poniverse",
+    "auth",
+    "authn",
+    "authentication",
+    "identity"
+  ],
+  "author": {
+    "name": "Ross (Codesign)",
+    "email": "cs@csdev.io",
+    "url": "http://csdev.io/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/CodesignDev/passport-poniverse.git"
+  },
+  "bugs": {
+    "url": "http://github.com/CodesignDev/passport-poniverse/issues"
+  },
+  "license": "Apache-2.0",
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "https://opensource.org/licenses/Apache-2.0"
+    }
+  ],
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "bookshelf": "^0.10.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "dotenv-safe": "^2.3.1",
+    "ejs": "^2.4.2",
+    "express": "^4.14.0",
+    "express-session": "^1.14.0",
+    "knex": "^0.11.7",
+    "moment": "^2.14.1",
+    "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "passport-poniverse": "https://github.com/CodesignDev/passport-poniverse.git",
+    "pg": "^6.0.2"
+  }
+}
