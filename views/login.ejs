@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+  <title>Passport Authentication Demo</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+  <style>
+    /*body { padding-top:80px; }*/
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Passport Authentication Demo</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="active"><a href="#">Login</a></li>
+      <li><a href="/register">Register</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <h2><span class="fa fa-sign-in"></span> Login</h2>
+
+      <% if (message.length > 0) { %>
+      <div class="alert alert-danger"><%= message %></div>
+      <% } %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-2" style="border-right: thin solid #eeeeee;">
+      <form action="/login" method="post">
+        <div class="form-group">
+          <label class="sr-only">Email</label>
+          <input type="text" class="form-control input-lg" name="email" placeholder="email@example.com">
+        </div>
+        <div class="form-group">
+          <label class="sr-only">Password</label>
+          <input type="password" class="form-control input-lg" name="password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-success btn-lg btn-block">Login</button>
+      </form>
+      <a href="/register" class="btn btn-link btn-lg btn-block">Register</a>
+    </div>
+    <div class="col-xs-3">
+      <!--<a href="/auth/facebook" class="btn btn-primary btn-block">Login with Facebook</a>-->
+      <!--<a href="/auth/twitter" class="btn btn-info btn-block">Login with Twitter</a>-->
+      <!--<a href="/auth/github" class="btn btn-default btn-block">Login with GitHub</a>-->
+      <a href="/auth/poniverse" class="btn btn-primary btn-block"><span class="fa fa-user"></span> Login with Poniverse</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
