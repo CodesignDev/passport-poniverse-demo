@@ -2,6 +2,7 @@ var bookshelf = require('../database');
 
 var User = bookshelf.Model.extend({
   tableName: 'users',
+  hasTimestamps: true,
   externalUsers: function() {
     return this.hasMany(ExternalUser);
   }
@@ -9,6 +10,7 @@ var User = bookshelf.Model.extend({
 
 var ExternalUser = bookshelf.Model.extend({
   tableName: 'external_users',
+  hasTimestamps: true,
   user: function() {
     return this.belongsTo(User);
   }

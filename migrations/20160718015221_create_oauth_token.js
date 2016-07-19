@@ -9,6 +9,7 @@ exports.up = function(knex, Promise) {
     table.string('refresh_token');
     table.timestamp('expires');
     table.integer('user_id').references('users.id');
+    table.timestamps();
   });
 };
 
